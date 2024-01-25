@@ -61,6 +61,10 @@ app.get("/subscribe", (req, res) => {
   }
 });
 
+app.get("/channel", (req, res) => {
+  res.send(channels);
+});
+
 wss.on("connection", (ws, req) => {
   ws.isAlive = true;
   var id = req.url.split("=")[1];
